@@ -13,6 +13,9 @@
         android:theme="@style/Theme.EATTO"
         tools:targetApi="31">
         <activity
+            android:name=".community.Challenge"
+            android:exported="false" />
+        <activity
             android:name=".community.Community"
             android:exported="false" />
         <activity
