@@ -18,7 +18,7 @@ class IntroSet1 : AppCompatActivity() {
         binding.start1.setOnClickListener {
             val intent = Intent(this, IntroSet2::class.java)
             startActivity(intent)
-            finish() // 이전 액티비티 닫기 원할 경우
+            finish()
         }
     }
 }

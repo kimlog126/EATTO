@@ -48,7 +48,7 @@ class IntroSet2 : AppCompatActivity() {
                                 val prefs = getSharedPreferences("user", MODE_PRIVATE)
                                 prefs.edit().putString("uid", uid).apply()
 
-                                // 성공적으로 저장 후에 화면 이동
+                                //  저장 후에 화면 이동
                                 startActivity(Intent(this, Home::class.java))
                                 finish()
                             }

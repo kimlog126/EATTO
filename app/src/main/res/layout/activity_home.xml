@@ -137,101 +137,142 @@
                 android:id="@+id/todayFoodSection"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:weightSum="3">
 
                 <!-- 아침 카드 -->
-                <LinearLayout
+                <FrameLayout
                     android:id="@+id/morningCard"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="4dp"
                     android:layout_weight="1"
                     android:background="@drawable/card_food"
-                    android:orientation="vertical"
-                    android:padding="12dp">
+                    android:clipToOutline="true"
+                    android:elevation="4dp"
+                    android:foreground="?attr/selectableItemBackground">
 
-                    <TextView
-                        android:id="@+id/mornig"
-                        android:layout_width="wrap_content"
+                    <ImageView
+                        android:id="@+id/morningImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:alpha="0.5"
+                        android:scaleType="centerCrop" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/pretendard_bold"
-                        android:text="아침"
-                        android:textColor="@color/text" />
+                        android:orientation="vertical"
+                        android:padding="12dp">
 
-                    <TextView
-                        android:id="@+id/food1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="48dp"
-                        android:fontFamily="@font/pretendard_bold"
-                        android:text="리코타 샐러드"
-                        android:textColor="@color/text" />
-                </LinearLayout>
+                        <TextView
+                            android:id="@+id/mornig"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/pretendard_bold"
+                            android:text="아침"
+                            android:textColor="@color/text" />
 
-                <!-- 점심 카드 -->
-                <LinearLayout
+                        <TextView
+                            android:id="@+id/food1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="48dp"
+                            android:fontFamily="@font/pretendard_bold"
+                            android:text="리코타 샐러드"
+                            android:textColor="@color/secondary" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <FrameLayout
                     android:id="@+id/lunchCard"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="4dp"
                     android:layout_weight="1"
                     android:background="@drawable/card_food"
-                    android:orientation="vertical"
-                    android:padding="12dp">
+                    android:clipToOutline="true">
 
-                    <TextView
-                        android:id="@+id/lunch"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/pretendard_bold"
-                        android:text="점심"
-                        android:textColor="@color/text" />
+                    <ImageView
+                        android:id="@+id/lunchImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:alpha="0.3"
+                        android:scaleType="centerCrop" />
 
-                    <TextView
-                        android:id="@+id/food2"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="48dp"
-                        android:fontFamily="@font/pretendard_bold"
-                        android:text="토마토 파스타"
-                        android:textColor="@color/text" />
-                </LinearLayout>
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/lunch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/pretendard_bold"
+                            android:text="점심"
+                            android:textColor="@color/text" />
+
+                        <TextView
+                            android:id="@+id/food2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="48dp"
+                            android:fontFamily="@font/pretendard_bold"
+                            android:text="토마토 파스타"
+                            android:textColor="@color/secondary" />
+                    </LinearLayout>
+                </FrameLayout>
 
                 <!-- 저녁 카드 -->
-                <LinearLayout
+                <FrameLayout
                     android:id="@+id/dinnerCard"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="4dp"
                     android:layout_weight="1"
                     android:background="@drawable/card_food"
-                    android:orientation="vertical"
-                    android:padding="12dp">
+                    android:clipToOutline="true">
 
-                    <TextView
-                        android:id="@+id/dinner"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/pretendard_bold"
-                        android:text="저녁"
-                        android:textColor="@color/text" />
+                    <ImageView
+                        android:id="@+id/dinnerImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:alpha="0.3"
+                        android:scaleType="centerCrop" />
 
-                    <TextView
-                        android:id="@+id/food3"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="48dp"
-                        android:fontFamily="@font/pretendard_bold"
-                        android:text="버섯 덮밥"
-                        android:textColor="@color/text" />
-                </LinearLayout>
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/dinner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/pretendard_bold"
+                            android:text="저녁"
+                            android:textColor="@color/text" />
+
+                        <TextView
+                            android:id="@+id/food3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="48dp"
+                            android:fontFamily="@font/pretendard_bold"
+                            android:text="버섯 덮밥"
+                            android:textColor="@color/secondary" />
+                    </LinearLayout>
+                </FrameLayout>
+
 
             </LinearLayout>
 
-            <!-- 4. 챌린지 카드 -->
+            <!-- 챌린지 -->
 
             <TextView
                 android:id="@+id/sectionTitle2"
@@ -309,7 +350,7 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- 5. 하단 네비게이션 -->
+    <!-- 하단 네비게이션 -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
         android:layout_width="0dp"

@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.android)
 
     id("com.google.gms.google-services")
+
+    id("org.jetbrains.kotlin.kapt")
 }
 
 android {
@@ -54,7 +56,17 @@ dependencies {
     implementation(libs.firebase.firestore.ktx)
     implementation(libs.firebase.analytics)
 
+    // 이미지 api
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    kapt("com.github.bumptech.glide:compiler:4.16.0")
+
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+
+
 }
