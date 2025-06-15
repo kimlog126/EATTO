@@ -1,21 +1,26 @@
 package com.example.eatto.intro
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.eatto.R
+import com.example.eatto.databinding.ActivityIntroBinding
 
 class Intro : AppCompatActivity() {
+
+    private lateinit var binding: ActivityIntroBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_intro)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        binding = ActivityIntroBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        // 3초 후 다음 액티비티로 전환
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this, IntroSet1::class.java)
+            startActivity(intent)
+            finish() // 인트로 액티비티는 종료
+        }, 3000)
     }
 }
