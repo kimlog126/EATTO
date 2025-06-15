@@ -7,6 +7,8 @@ android {
     namespace = "com.example.eatto"
     compileSdk = 34
 
+
+
     defaultConfig {
         applicationId = "com.example.eatto"
         minSdk = 24
@@ -32,6 +34,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 }
 

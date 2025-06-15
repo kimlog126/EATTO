@@ -13,10 +13,25 @@
         android:theme="@style/Theme.EATTO"
         tools:targetApi="31">
         <activity
-            android:name=".intro.Intro"
+            android:name=".community.Community"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".more.More"
+            android:exported="false" />
+        <activity
+            android:name=".report.Report"
+            android:exported="false" />
+        <activity
+            android:name=".home.Home"
+            android:exported="false" />
+        <activity
+            android:name=".intro.IntroSet2"
+            android:exported="false" />
+        <activity
+            android:name=".intro.IntroSet1"
+            android:exported="false" />
+        <activity
+            android:name=".intro.Intro"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

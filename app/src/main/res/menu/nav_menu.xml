@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home"
+        android:title="홈"/>
+    <item
+        android:id="@+id/nav_report"
+        android:icon="@drawable/bar_chart"
+        android:title="리포트"/>
+    <item
+        android:id="@+id/nav_community"
+        android:icon="@drawable/users"
+        android:title="커뮤니티"/>
+    <item
+        android:id="@+id/nav_more"
+        android:icon="@drawable/more_horizontal"
+        android:title="더보기"/>
+</menu>
