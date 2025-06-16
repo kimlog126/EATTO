@@ -25,6 +25,7 @@ class FeedFragment : Fragment() {
     private var listenerRegistration: ListenerRegistration? = null
 
     private val handler = Handler()
+
     private val refreshRunnable = object : Runnable {
         override fun run() {
             feedAdapter.notifyDataSetChanged()

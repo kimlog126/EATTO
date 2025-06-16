@@ -46,8 +46,6 @@ class FeedAdapter(private val items: List<FeedItem>) :
         }
     }
 
-    override fun getItemCount(): Int = items.size
-
     private fun formatRelativeTime(timestamp: Long): String {
         val now = System.currentTimeMillis()
         val diff = now - timestamp
@@ -64,4 +62,6 @@ class FeedAdapter(private val items: List<FeedItem>) :
             else -> "${days}일 전"
         }
     }
+
+    override fun getItemCount(): Int = items.size
 }

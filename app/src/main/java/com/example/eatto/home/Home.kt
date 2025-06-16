@@ -45,10 +45,6 @@ class Home : AppCompatActivity() {
                     binding.goalKcal.text = "${goalKcal}\n권장"
                     binding.hello.text = "안녕하세요, ${nickname}님!"
                 }
-                .addOnFailureListener {
-                    binding.goalKcal.text = "정보 없음"
-                    binding.hello.text = "안녕하세요!"
-                }
         }
 
         val food1 = binding.food1.text.toString()
@@ -96,6 +92,7 @@ class Home : AppCompatActivity() {
                     val request = Request.Builder().url(url).build()
                     val response = client.newCall(request).execute()
                     val body = response.body?.string()
+
                     if (response.isSuccessful && !body.isNullOrEmpty()) {
                         val json = JSONObject(body)
                         val hits = json.getJSONArray("hits")
