@@ -8,10 +8,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.eatto.databinding.FragmentChallengeBinding
 
-class Challenge : Fragment() {
+class ChallengeFragment : Fragment() {
 
     private var _binding: FragmentChallengeBinding? = null
     private val binding get() = _binding!!
+
     private lateinit var challengeAdapter: ChallengeAdapter
 
     private val challengeList = listOf(
@@ -20,8 +21,7 @@ class Challenge : Fragment() {
     )
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentChallengeBinding.inflate(inflater, container, false)
