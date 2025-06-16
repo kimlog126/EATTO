@@ -7,7 +7,6 @@
     android:layout_gravity="center"
     android:background="#060D24">
 
-    <!-- ScrollView로 전체 감싸기 -->
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -26,8 +25,6 @@
             android:paddingRight="15dp"
             android:paddingBottom="15dp">
 
-
-            <!-- 2. 칼로리 카드 -->
             <LinearLayout
                 android:id="@+id/kcalCard"
                 android:layout_width="match_parent"
@@ -118,11 +115,8 @@
                         android:textColor="@color/text" />
                 </LinearLayout>
 
-                <!-- kcal + 이미지 묶는 수평 레이아웃 추가 -->
-                <!-- 권장 / 섭취 / 퍼센트 텍스트들 추가 -->
             </LinearLayout>
 
-            <!-- 3. 오늘 식단 -->
             <TextView
                 android:id="@+id/sectionTitle1"
                 android:layout_width="match_parent"
@@ -143,7 +137,6 @@
                 android:orientation="horizontal"
                 android:weightSum="3">
 
-                <!-- 아침 카드 -->
                 <FrameLayout
                     android:id="@+id/morningCard"
                     android:layout_width="0dp"
@@ -228,7 +221,6 @@
                     </LinearLayout>
                 </FrameLayout>
 
-                <!-- 저녁 카드 -->
                 <FrameLayout
                     android:id="@+id/dinnerCard"
                     android:layout_width="0dp"
@@ -271,8 +263,6 @@
 
 
             </LinearLayout>
-
-            <!-- 챌린지 -->
 
             <TextView
                 android:id="@+id/sectionTitle2"
@@ -350,7 +340,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- 하단 네비게이션 -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
         android:layout_width="0dp"

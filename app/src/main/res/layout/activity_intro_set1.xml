@@ -9,7 +9,6 @@
     android:background="@color/primary"
     tools:context=".intro.IntroSet1">
 
-        <!-- Scrollable Content -->
         <ScrollView
             android:id="@+id/scrollContent"
             android:layout_width="0dp"
@@ -91,7 +90,6 @@
                 </LinearLayout>
         </ScrollView>
 
-        <!-- Fixed Bottom Button -->
         <Button
             android:id="@+id/start1"
             android:layout_width="0dp"

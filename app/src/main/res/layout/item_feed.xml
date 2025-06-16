@@ -57,7 +57,6 @@
         android:text="게시글 내용입니다"
         android:textColor="#ffffff" />
 
-<!-- 사진 -->
     <ImageView
         android:id="@+id/feedImage"
         android:layout_width="match_parent"
@@ -67,8 +66,6 @@
         android:scaleType="centerCrop"
         android:visibility="gone" />
 
-
-<!-- 좋아요와 댓글 -->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

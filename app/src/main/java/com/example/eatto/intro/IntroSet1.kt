@@ -14,7 +14,6 @@ class IntroSet1 : AppCompatActivity() {
         binding = ActivityIntroSet1Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // "시작하기" 버튼 클릭 시 IntroSet2로 이동
         binding.start1.setOnClickListener {
             val intent = Intent(this, IntroSet2::class.java)
             startActivity(intent)

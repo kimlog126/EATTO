@@ -26,43 +26,44 @@ class IntroSet2 : AppCompatActivity() {
             val nickname = binding.inputName.text.toString()
             val height = binding.inputCm.text.toString().toFloatOrNull() ?: 0f
             val weight = binding.inputKg.text.toString().toFloatOrNull() ?: 0f
-            val goalKcal = ((height + weight) * 10).toInt() // 예시 계산
 
-            if (email.isNotEmpty() && password.isNotEmpty() && nickname.isNotEmpty()) {
-                // Firebase Authentication으로 사용자 생성
-                auth.createUserWithEmailAndPassword(email, password)
-                    .addOnSuccessListener { result ->
-                        val uid = result.user?.uid ?: return@addOnSuccessListener
-
-                        val userData = hashMapOf(
-                            "email" to email,
-                            "nickname" to nickname,
-                            "height" to height,
-                            "weight" to weight,
-                            "goalKcal" to goalKcal
-                        )
-
-                        db.collection("users").document(uid).set(userData)
-                            .addOnSuccessListener {
-                                // SharedPreferences 저장
-                                val prefs = getSharedPreferences("user", MODE_PRIVATE)
-                                prefs.edit().putString("uid", uid).apply()
-
-                                //  저장 후에 화면 이동
-                                startActivity(Intent(this, Home::class.java))
-                                finish()
-                            }
-                            .addOnFailureListener {
-                                Toast.makeText(this, "Firestore 저장 실패", Toast.LENGTH_SHORT).show()
-                            }
-                    }
-                    .addOnFailureListener {
-                        Toast.makeText(this, "회원가입 실패", Toast.LENGTH_SHORT).show()
-                    }
-
-            } else {
+            if (email.isBlank() || password.isBlank() || nickname.isBlank()) {
                 Toast.makeText(this, "모든 항목을 입력해주세요", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
+
+            if (height <= 0f || weight <= 0f) {
+                Toast.makeText(this, "키와 몸무게를 정확히 입력해주세요", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val goalKcal = ((height + weight) * 10).toInt()
+
+            auth.createUserWithEmailAndPassword(email, password)
+                .addOnSuccessListener { result ->
+                    val uid = result.user!!.uid
+
+                    val userData = hashMapOf(
+                        "email" to email,
+                        "nickname" to nickname,
+                        "height" to height,
+                        "weight" to weight,
+                        "goalKcal" to goalKcal
+                    )
+
+                    db.collection("users").document(uid).set(userData)
+                        .addOnSuccessListener {
+                            startActivity(Intent(this, Home::class.java))
+                            finish()
+                        }
+                        .addOnFailureListener {
+                            Toast.makeText(this, "Firestore 저장 실패", Toast.LENGTH_SHORT).show()
+                        }
+                }
+                .addOnFailureListener {
+                    Toast.makeText(this, "회원가입 실패", Toast.LENGTH_SHORT).show()
+                }
         }
     }
+
 }

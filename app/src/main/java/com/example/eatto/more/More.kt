@@ -1,21 +1,39 @@
 package com.example.eatto.more
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.eatto.R
+import com.example.eatto.community.Community
+import com.example.eatto.home.Home
+import com.example.eatto.report.Report
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class More : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_more)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
+        bottomNav.selectedItemId = R.id.nav_more
+
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> {
+                    startActivity(Intent(this, Home::class.java))
+                    true
+                }
+                R.id.nav_report -> {
+                    startActivity(Intent(this, Report::class.java))
+                    true
+                }
+                R.id.nav_community -> {
+                    startActivity(Intent(this, Community::class.java))
+                    true
+                }
+                R.id.nav_more -> true
+                else -> false
+            }
         }
     }
 }

@@ -22,7 +22,7 @@ class FeedAdapter(private val items: List<FeedItem>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.feed_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_feed, parent, false)
         return FeedViewHolder(view)
     }
 

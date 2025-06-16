@@ -27,7 +27,7 @@ class FeedFragment : Fragment() {
     private val handler = Handler()
     private val refreshRunnable = object : Runnable {
         override fun run() {
-            feedAdapter.notifyDataSetChanged()  // 시간 텍스트 갱신
+            feedAdapter.notifyDataSetChanged()
             handler.postDelayed(this, 60_000)
         }
     }

@@ -19,49 +19,52 @@ class Community : AppCompatActivity() {
         binding = ActivityCommunityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // 초기 프래그먼트: 피드
-        showFragment(FeedFragment())
+        // 기본 탭 설정
+        val defaultTab = intent.getStringExtra("defaultTab") ?: "feed"
+        when (defaultTab) {
+            "challenge" -> selectTab("challenge", ChallengeFragment())
+            "magazine" -> selectTab("magazine", MagazineFragment())
+            else -> selectTab("feed", FeedFragment())
+        }
 
         // 하단 네비게이션
         binding.bottomNav.selectedItemId = R.id.nav_community
         binding.bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> {
-                    startActivity(Intent(this, Home::class.java))
-                    true
+                    startActivity(Intent(this, Home::class.java)); true
                 }
                 R.id.nav_report -> {
-                    startActivity(Intent(this, Report::class.java))
-                    true
+                    startActivity(Intent(this, Report::class.java)); true
                 }
                 R.id.nav_community -> true
                 R.id.nav_more -> {
-                    startActivity(Intent(this, More::class.java))
-                    true
+                    startActivity(Intent(this, More::class.java)); true
                 }
                 else -> false
             }
         }
 
-        // 탭 전환 리스너
+        // 상단 탭 리스너
         binding.tabFeed.setOnClickListener {
-            showFragment(FeedFragment())
-            setTabSelected("feed")
+            selectTab("feed", FeedFragment())
         }
         binding.tabChallenge.setOnClickListener {
-            showFragment(ChallengeFragment())
-            setTabSelected("challenge")
+            selectTab("challenge", ChallengeFragment())
         }
         binding.tabMagazine.setOnClickListener {
-            showFragment(MagazineFragment())
-            setTabSelected("magazine")
+            selectTab("magazine", MagazineFragment())
         }
 
         // 글쓰기 버튼
         binding.writePostButton.setOnClickListener {
-            val intent = Intent(this, NewPostActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, NewPostActivity::class.java))
         }
+    }
+
+    private fun selectTab(tag: String, fragment: Fragment) {
+        showFragment(fragment)
+        setTabSelected(tag)
     }
 
     private fun showFragment(fragment: Fragment) {
@@ -76,3 +79,4 @@ class Community : AppCompatActivity() {
         binding.tabMagazine.setTextColor(getColor(if (selected == "magazine") R.color.white else R.color.gray))
     }
 }
+

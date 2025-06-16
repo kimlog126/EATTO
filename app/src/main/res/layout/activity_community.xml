@@ -8,7 +8,6 @@
     android:background="@color/primary"
     tools:context=".community.Community">
 
-    <!-- 상단 제목 -->
     <TextView
         android:id="@+id/communityTitle"
         android:layout_width="wrap_content"
@@ -23,7 +22,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- 상단 탭바 -->
     <LinearLayout
         android:id="@+id/tabBar"
         android:layout_width="0dp"
@@ -68,7 +66,6 @@
             android:textSize="16sp" />
     </LinearLayout>
 
-    <!-- 콘텐츠가 들어갈 FrameLayout -->
     <FrameLayout
         android:id="@+id/communityContainer"
         android:layout_width="0dp"
@@ -91,7 +88,6 @@
         app:backgroundTint="@color/sub" />
 
 
-    <!-- 하단 네비게이션 -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
         android:layout_width="0dp"

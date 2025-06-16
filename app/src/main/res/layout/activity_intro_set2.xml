@@ -9,7 +9,6 @@
     android:background="@color/primary"
     tools:context=".intro.IntroSet2">
 
-    <!-- 스크롤 가능한 콘텐츠 -->
     <ScrollView
         android:id="@+id/scrollContent"
         android:layout_width="0dp"
@@ -47,7 +46,6 @@
                 android:text="잇또 사용을 위해 입력해주세요."
                 android:textColor="@color/secondary" />
 
-            <!-- 아이디 입력 -->
             <LinearLayout
                 android:id="@+id/idInput"
                 android:layout_width="match_parent"
@@ -83,7 +81,6 @@
                     android:textSize="14sp" />
             </LinearLayout>
 
-            <!-- 비밀번호 입력 -->
             <LinearLayout
                 android:id="@+id/passwordInput"
                 android:layout_width="match_parent"
@@ -120,7 +117,6 @@
                     android:textSize="14sp" />
             </LinearLayout>
 
-            <!-- 닉네임 입력 -->
             <LinearLayout
                 android:id="@+id/nicknameInput"
                 android:layout_width="match_parent"
@@ -157,7 +153,6 @@
                     android:textSize="14sp" />
             </LinearLayout>
 
-            <!-- 키 입력 -->
             <LinearLayout
                 android:id="@+id/cmInput"
                 android:layout_width="match_parent"
@@ -194,7 +189,6 @@
                     android:textSize="14sp" />
             </LinearLayout>
 
-            <!-- 몸무게 입력 -->
             <LinearLayout
                 android:id="@+id/kgInput"
                 android:layout_width="match_parent"
@@ -234,7 +228,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- 하단 고정 버튼 -->
     <Button
         android:id="@+id/start2"
         android:layout_width="0dp"
